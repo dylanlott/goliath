@@ -20,12 +20,20 @@ func main() {
 
 	}
 
+	// Index
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		data := map[string]string{
 			"Region": os.Getenv("FLY_REGION"),
 		}
-
 		t.ExecuteTemplate(w, "index.html.tmpl", data)
+	})
+
+	// Builds returns a list of builds.
+	http.HandleFunc("/builds", func(w http.ResponseWriter, r *http.Request) {
+		data := map[string]string{
+			"Region": os.Getenv("FLY_REGION"),
+		}
+		t.ExecuteTemplate(w, "builds.html.tmpl", data)
 	})
 
 	log.Println("listening on", port)

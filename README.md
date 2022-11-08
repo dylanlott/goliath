@@ -1,6 +1,6 @@
-# go-example
+# goliath
 
-A minimal Go application for [fly.io Getting Started](https://fly.io/docs/getting-started/golang/) documentation and tutorials.
+a starcraft build scraper
 
 To get started:
 
